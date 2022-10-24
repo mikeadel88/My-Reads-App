@@ -42,13 +42,11 @@ return(
     {searchBooks.map((b)=>{
       let shelf="none"
       books.forEach((book)=>{
-        if(book.id!==b.id)
+        if(book.id===b.id)
         {
-          shelf="none"
-        }
-        else{
           shelf=book.shelf
         }
+
       })
 
       return (

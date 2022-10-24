@@ -15,13 +15,12 @@ useEffect(
     getBook()
   }
   ,[])
-  const changeShelf=(books,shelf)=>{
-    BooksAPI.update(books,shelf)
-    const getBook=async()=>{
-      const res=await BooksAPI.getAll()
-      setBooks(res)
-    }
-    getBook()
+  const changeShelf=(book,shelf)=>{
+    book.shelf=shelf
+    BooksAPI.update(book,shelf).then(()=>{
+      setBooks([...books.filter((b) => b.id !== book.id).concat(book) ]);
+    })
+    
   }
   return (
     <div className="app">

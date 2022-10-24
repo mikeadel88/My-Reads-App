@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 const Books=({book,changeShelf,currentShelf})=>{
   let image="";
   if(book.imageLinks){
@@ -35,5 +36,11 @@ const Books=({book,changeShelf,currentShelf})=>{
                       <div className="book-authors">{book.authors}</div>
                     </div>
     )
+}
+Books.propTypes={
+  book:PropTypes.array,
+  changeShelf:PropTypes.func,
+  currentShelf:PropTypes.string
+
 }
 export default Books

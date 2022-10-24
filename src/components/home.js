@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import PropTypes from "prop-types";
 import Books from "./book"
 const HomePage=({books,changeShelf})=>{
     return (
@@ -62,5 +63,10 @@ const HomePage=({books,changeShelf})=>{
         </div>
       </div>
     )
+}
+HomePage.propTypes={
+  books:PropTypes.array.isRequired,
+  changeShelf:PropTypes.func.isRequired,
+
 }
 export default HomePage
